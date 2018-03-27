@@ -18,7 +18,7 @@
 
 
 // reverseArray - version 1
-function reverseArrayV1(inputArray) {
+function reverseArray_v1(inputArray) {
   let outputArray = [];
   for (let i = inputArray.length - 1; i >= 0; i--) {
     outputArray.push(inputArray[i]);
@@ -28,7 +28,7 @@ function reverseArrayV1(inputArray) {
 
 
 // reverseArray - version 2
-function reverseArrayV2(inputArray) {
+function reverseArray_v2(inputArray) {
   let outputArray = [];
   for (let element of inputArray) {
     outputArray.unshift(element);
