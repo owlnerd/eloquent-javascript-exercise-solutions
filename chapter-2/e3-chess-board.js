@@ -25,7 +25,7 @@
 
 
 let chessBoard;
-let dim = 8;
+let dim;
 
 
 // chess board code - version 1
