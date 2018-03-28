@@ -25,7 +25,7 @@
 
 
 // Group class - version 1 (with class notation)
-class Group {
+class Group_v1 {
   constructor() {
     this.component = [];
   }
@@ -49,7 +49,7 @@ class Group {
   }
 
   static from(collection) {
-    let newGroup = new Group();
+    let newGroup = new Group_v1();
     for (let el of collection)
       newGroup.add(el);
     return newGroup;
@@ -58,7 +58,7 @@ class Group {
 
 
 // Group class - version 2 (without class notation)
-function Group() {
+function Group_v2() {
   this.component = [];
 }
 
@@ -81,7 +81,7 @@ Group.prototype.delete = function(element) {
 }
 
 Group.from = function(collection) {
-  let newGroup = new Group();
+  let newGroup = new Group_v2();
   for (el of collection)
     newGroup.add(el);
   return newGroup;
