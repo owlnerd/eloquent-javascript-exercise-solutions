@@ -23,6 +23,7 @@
 
 
 // deepEqual - version 1
+// ---------------------
 function deepEqual_v1(obj1, obj2) {
   if (obj1 === obj2)
     return true;
@@ -45,6 +46,7 @@ function deepEqual_v1(obj1, obj2) {
 
 
 // deepEqual - verison 2
+// ---------------------
 function deepEqual_v2(obj1, obj2) {
   if (obj1 === obj2)
     return true;
