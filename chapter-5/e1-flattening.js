@@ -13,4 +13,5 @@ let arrays = [[1, 2, 3], [4, 5], [6]];
 
 
 // flattening code
+// ---------------
 console.log(arrays.reduce((a, b) => a.concat(b)));
