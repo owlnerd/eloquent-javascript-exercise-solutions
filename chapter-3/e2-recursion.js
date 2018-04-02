@@ -21,6 +21,7 @@
 
 
 // isEven - version 1
+// ------------------
 function isEven_v1(n) {
   if (n < 0) n = -n;
   if (n == 0) return true;
@@ -30,6 +31,7 @@ function isEven_v1(n) {
 
 
 // isEven - version 2
+// ------------------
 const isEven_v2 = function(n) {
   if (n == 0) return true;
   if (n == 1) return false;
@@ -38,6 +40,7 @@ const isEven_v2 = function(n) {
 
 
 // isEven - version 3
+// ------------------
 const isEven_v3 = (n) => {
   if (n == 0) return true;
   if (n == 1) return false;
