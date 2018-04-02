@@ -16,6 +16,7 @@
 
 
 // my own loop code - version 1 (utilizing while loop)
+// ---------------------------------------------------
 function loop_v1(val, test, update, body) {
   while (test(val)) {
     body();
@@ -25,6 +26,7 @@ function loop_v1(val, test, update, body) {
 
 
 // my own loop - version 2 (utilizing for loop)
+// --------------------------------------------
 function loop_v2(val, test, update, body) {
   for ( ; test(val); val = update(val))
     body(val);
