@@ -22,6 +22,7 @@
 
 
 // counsBs
+// -------
 function countBs(s) {
   let count = 0;
   for (let i = 0; i < s.length; i++)
@@ -32,6 +33,7 @@ function countBs(s) {
 
 
 // countChar
+// ---------
 const countChar = function(s, c) {
   let count = 0;
   for (let i = 0; i < s.length; i++)
@@ -42,6 +44,7 @@ const countChar = function(s, c) {
 
 
 // countBs rewritten with countChar
+// --------------------------------
 function countBs_rewritten(s) {
   return countChar(s, "B");
 }
