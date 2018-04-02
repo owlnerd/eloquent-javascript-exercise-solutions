@@ -18,6 +18,7 @@
 
 
 // reverseArray - version 1
+// ------------------------
 function reverseArray_v1(inputArray) {
   let outputArray = [];
   for (let i = inputArray.length - 1; i >= 0; i--) {
@@ -28,6 +29,7 @@ function reverseArray_v1(inputArray) {
 
 
 // reverseArray - version 2
+// ------------------------
 function reverseArray_v2(inputArray) {
   let outputArray = [];
   for (let element of inputArray) {
@@ -38,6 +40,7 @@ function reverseArray_v2(inputArray) {
 
 
 // reverseArrayInPlace
+// -------------------
 function reverseArrayInPlace(array) {
   for (let i = 0, j = array.length - 1; i < j; i++, j--) {
     let tmp = array[i];
