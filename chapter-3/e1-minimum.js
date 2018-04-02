@@ -10,17 +10,20 @@
 
 
 // min - version 1
+// ---------------
 function min_v1(a, b) {
   if (a < b) return a;
   else return b;
 }
 
 
-//min - version 2
+// min - version 2
+// ---------------
 const min_v2 = function(a, b) {
   return a < b ? a : b;
 }
 
 
 // min - version 3
+// ---------------
 const min_v3 = (a, b) => a < b ? a : b;
