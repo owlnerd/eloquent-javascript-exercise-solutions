@@ -26,6 +26,7 @@
 
 
 // range
+// -----
 function range(start, end, step = start <= end ? 1 : -1) {
   let outputArray = [];
   for (let i = start; step == 1 ? i <= end : end <= i; i += step) {
@@ -36,6 +37,7 @@ function range(start, end, step = start <= end ? 1 : -1) {
 
 
 // sum
+// ---
 function sum(coefs) {
   let result = 0;
   for (let coef of coefs) {
