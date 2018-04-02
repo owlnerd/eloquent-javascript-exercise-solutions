@@ -27,6 +27,7 @@ let triangle;
 
 
 // triangle code - version 1
+// -------------------------
 triangle = "";
 for (let t = "#"; t.length <= 7; t += "#")
   triangle += t + "\n";
@@ -35,6 +36,7 @@ console.log(triangle)
 
 
 // triangle code - version 2
+// -------------------------
 triangle = "";
 for (let i = 1; i <= 7; i++) {
   let line = "";
@@ -48,6 +50,7 @@ console.log(triangle)
 
 
 // bonus inverted triangle - recursive function
+// --------------------------------------------
 function invertedTriangleRecursive(n, base = n) {
   if (n == 0) return;
   invertedTriangleRecursive(n - 1, base);
