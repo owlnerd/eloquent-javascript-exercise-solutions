@@ -50,6 +50,7 @@
 // arrayToList - progressive verison
 // Array elements are added to the list in the order that they appear in the
 // array, from the 0th element to the .length - 1th element.
+// -------------------------------------------------------------------------
 function arrayToListProg(array) {
   let list = null;
   let listElement;
@@ -70,6 +71,7 @@ function arrayToListProg(array) {
 // .length - 1th element of the array to the 0th one. However, this does not
 // change the order of list nodes, as the references to the rest node were set
 // to the previously created node, instead of the newly created one.
+// ---------------------------------------------------------------------------
 function arrayToListReg(array) {
   let list = null;
   for (let i = array.length - 1; i >=0 ; i--) {
@@ -80,6 +82,7 @@ function arrayToListReg(array) {
 
 
 // listToArray
+// -----------
 function listToArray(list) {
   let array = [];
   let listElement = list;
@@ -92,12 +95,14 @@ function listToArray(list) {
 
 
 // prepend
+// -------
 function prepend(element, list) {
   return {value: element, rest: list};
 }
 
 
 // nth - iterative version
+// -----------------------
 function nthIter(list, n) {
   while (n) {
     if (list == null)
@@ -109,7 +114,8 @@ function nthIter(list, n) {
 }
 
 
-//nth - recursive version
+// nth - recursive version
+// -----------------------
 function nthRecur(list, n) {
   if (list == null)
     return undefined;
