@@ -29,6 +29,7 @@ let dim;
 
 
 // chess board code - version 1
+// ----------------------------
 chessBoard = "";
 dim = 8;
 for (let i = 0; i < dim; i++) {
