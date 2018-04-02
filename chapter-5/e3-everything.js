@@ -40,6 +40,6 @@ function some(array, test) {
 
 // every - version 3 (using built-in version of some)
 // --------------------------------------------------
-function every_v2(array, test) {
-  return array.some(element => !test(element));
+function every_v3(array, test) {
+  return !array.some(element => !test(element));
 }
