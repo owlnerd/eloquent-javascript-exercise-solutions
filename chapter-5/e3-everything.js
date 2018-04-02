@@ -16,7 +16,7 @@
 
 // every - version 1 (using for loop)
 // ----------------------------------
-function every(array, test) {
+function every_v1(array, test) {
   for (let element of array)
     if (!test(element)) return false;
   return true;
