@@ -19,6 +19,7 @@
 
 
 // fizzbuzz code - version 1
+// -------------------------
 for (let n = 1; n <= 100; n++) {
   if (n % 3 == 0) {
     if (n % 5 == 0) {
@@ -35,6 +36,7 @@ for (let n = 1; n <= 100; n++) {
 
 
 // fizzbuzz code - version 2
+// -------------------------
 for (let n = 1; n <= 100; n++) {
   let fizzBuzz = "";
   if (!(n % 3)) fizzBuzz += "Fizz";
