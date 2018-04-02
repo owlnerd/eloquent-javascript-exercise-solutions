@@ -15,6 +15,7 @@
 
 
 // every - version 1 (using for loop)
+// ----------------------------------
 function every(array, test) {
   for (let element of array)
     if (!test(element)) return false;
@@ -22,13 +23,14 @@ function every(array, test) {
 }
 
 
-// every - version 2 (using some function defined later)
+// every - version 2 (using 'some' function defined below)
+// -------------------------------------------------------
 function every_v2(array, test) {
   return !some(array, element => !test(element));
 }
 
-
 // some - defined for use in every - version 2
+// -------------------------------------------
 function some(array, test) {
   for (let element of array)
     if (test(element)) return true;
@@ -37,6 +39,7 @@ function some(array, test) {
 
 
 // every - version 3 (using built-in version of some)
+// --------------------------------------------------
 function every_v2(array, test) {
   return array.some(element => !test(element));
 }
