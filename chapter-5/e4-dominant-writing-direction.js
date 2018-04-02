@@ -14,6 +14,7 @@
 
 
 // helper function - identifies the script that character belongs to
+// -----------------------------------------------------------------
 function getCharScript(char) {
   for (let script of SCRIPTS)
     if (script.ranges.some(([low, high]) => char >= low && char < high))
@@ -23,6 +24,7 @@ function getCharScript(char) {
 
 
 // helper function - counts the number of elements each category contains
+// ----------------------------------------------------------------------
 function countCatagories(items, itemCategory) {
   let categoriesCounter = [];
   for (let item of items) {
@@ -38,6 +40,7 @@ function countCatagories(items, itemCategory) {
 
 
 // dominantDirection - determines the dominant writing direction of the text
+// -------------------------------------------------------------------------
 function dominantDirection(text) {
   let directionsCount = countCatagories(text, c => {
     let script = getCharScript(c.codePointAt(0));
