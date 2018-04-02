@@ -1,5 +1,5 @@
 /*
-  CHAPTER 5 - EXERCISE 1
+  CHAPTER 5 - EXERCISE 4
 
   DOMINANT WRITING DIRECTION
 
@@ -39,7 +39,6 @@ function countCatagories(items, itemCategory) {
 
 // dominantDirection - determines the dominant writing direction of the text
 function dominantDirection(text) {
-  // Your code here.
   let directionsCount = countCatagories(text, c => {
     let script = getCharScript(c.codePointAt(0));
     return script ? script.direction : "none";
