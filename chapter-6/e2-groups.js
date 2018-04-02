@@ -9,11 +9,11 @@
   part of the set. A value can only be part of a set once—adding it again
   doesn’t have any effect.
 
-  Write a class called Group (since Set is already taken). Like Set, it has
+  Write a class called 'Group' (since Set is already taken). Like Set, it has
   add, delete, and has methods. Its constructor creates an empty component, add
   adds a value to the component (but only if it isn’t already a member), delete
-  removes its argument from the component (if it was a member), and has returns a
-  Boolean value indicating whether its argument is a member of the component.
+  removes its argument from the component (if it was a member), and has returns
+  a Boolean value indicating whether its argument is a member of the component.
 
   Use the === operator, or something equivalent such as indexOf, to determine
   whether two values are the same.
@@ -24,65 +24,101 @@
 */
 
 
-// Group class - version 1 (with class notation)
-class Group_v1 {
+// Group class - version 1 (using Ad Hoc object construction)
+// ----------------------------------------------------------
+let protoGroup_v1 = {
+  add(x) {
+    if (!this.has(x))
+      this.grp.push(x);
+    else
+      console.log(x + " is already an element of the Group.");
+  },
+  delete(x) {
+    if (this.has(x))
+      delete this.grp[this.grp.findIndex(v => v === x)];
+    else console.log(x + " is not an element of the Group.");
+  },
+  has(x) {
+    return this.grp.some(v => v === x);
+  }
+}
+
+function Group_v1() {
+  let group = Object.create(protoGroup_v1);
+  group.grp = [];
+  return group;
+}
+
+Group_v1.from = function(collection) {
+  let group = Group_v1();
+  for (let element of collection)
+    group.add(element);
+  return group;
+}
+
+
+// Group class - version 2 (using constructors with new keyword and constructor
+// prototype manipulation)
+// ----------------------------------------------------------------------------
+function Group_v2() {
+  this.grp = [];
+}
+
+Group_v2.prototype.add = function(x) {
+  if (!this.has(x))
+      this.grp.push(x);
+  else
+    console.log(x + " is already an element of the Group.");
+}
+
+Group_v2.prototype.delete = function(x) {
+  if (this.has(x))
+      delete this.grp[this.grp.findIndex(v => v === x)];
+  else
+    console.log(x + " is not an element of the Group.");
+}
+
+Group_v2.prototype.has = function(x) {
+  return this.grp.some(v => v === x);
+}
+
+Group_v2.from = function(collection) {
+  let group = new Group_v2();
+  for (let element of collection)
+    group.add(element);
+  return group;
+}
+
+
+// Group class - version 3 (using class syntactic sugar)
+// -----------------------------------------------------
+class Group_v3 {
   constructor() {
-    this.component = [];
+    this.grp = [];
   }
 
-  has(element) {
-    return this.component.includes(element);
-  }
-
-  add(element) {
-    if (!this.has(element))
-      this.component.push(element);
+  add(x) {
+    if (!this.has(x))
+      this.grp.push(x);
     else
-      console.log("Group already contains " + element);
+      console.log(x + " is already an element of the Group.");
   }
 
-  delete(element) {
-    if (this.has(element))
-      delete this.component[this.component.indexOf(element)];
+  delete(x) {
+    if (this.has(x))
+      delete this.grp[this.grp.findIndex(v => v === x)];
     else
-      console.log("Group does not contain " + element);
+      console.log(x + " is not an element of the Group.");
+  }
+
+  has(x) {
+    return this.grp.some(v => v === x);
   }
 
   static from(collection) {
-    let newGroup = new Group_v1();
-    for (let el of collection)
-      newGroup.add(el);
-    return newGroup;
+    let group = new Group_v3();
+    for (let element of collection)
+      group.add(element);
+    return group;
   }
-}
-
-
-// Group class - version 2 (without class notation)
-function Group_v2() {
-  this.component = [];
-}
-
-Group.prototype.add = function(element) {
-  if (!this.has(element))
-    this.component.push(element);
-  else
-    console.log("Group already contains " + element);
-}
-
-Group.prototype.has = function(element) {
-  return this.component.includes(element);
-}
-
-Group.prototype.delete = function(element) {
-  if (this.has(element))
-    delete this.component[this.component.indexOf(element)];
-  else
-    console.log("Group already contains " + element);
-}
-
-Group.from = function(collection) {
-  let newGroup = new Group_v2();
-  for (el of collection)
-    newGroup.add(el);
-  return newGroup;
 }
