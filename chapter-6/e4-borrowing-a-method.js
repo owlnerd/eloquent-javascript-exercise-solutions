@@ -23,3 +23,4 @@ console.log(hasOwnProperty.call(map, "one"));
 
 
 // borrowing a method cade - version 2 (with fully qualified name)
+console.log(Object.prototype.hasOwnProperty.call(map, "one"));
