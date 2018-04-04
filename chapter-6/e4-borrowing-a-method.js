@@ -22,5 +22,5 @@ let map = {one: true, two: true, hasOwnProperty: true};
 console.log(hasOwnProperty.call(map, "one"));
 
 
-// borrowing a method cade - version 2 (with fully qualified name)
+// borrowing a method code - version 2 (with fully qualified name)
 console.log(Object.prototype.hasOwnProperty.call(map, "one"));
