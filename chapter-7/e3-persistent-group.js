@@ -31,7 +31,6 @@
 // PGroup class
 // ------------
 class PGroup {
-  // Your code here
   constructor(group = []) {
     this.grp = group;
   }
@@ -43,7 +42,8 @@ class PGroup {
       return new PGroup(this.grp.concat(x));
     else return this;
   }
-  // delete method - version 1
+  // delete method - version 1 (using slice array method)
+  // -------------------------
   delete(x) {
     if (this.has(x)) {
       let index = this.grp.findIndex(v => v === x);
@@ -51,19 +51,30 @@ class PGroup {
     }
     else return this;
   }
-  // delete method - version 2
+  /* delete method - version 2 (using splice array method)
+     -------------------------
+  delete(x) {
+    if (this.has(x)) {
+      let index = this.grp.findIndex(v => x == v);
+      let newGrp = this.grp.slice(0);
+      newGrp.splice(index, 1);
+    } else
+      return this;
+  } */
+  /* delete method - version 3
+     --------------------------
   delete(x) {
     if (this.has(x)) {
       let newGrp = this.grp.slice(0);
-      delete this.grp[this.grp.findIndex(v => v === x)];
+      delete newGrp[newGrp.findIndex(v => v === x)];
       return new PGroup(newGrp);
     }
     else return this;
-  }
+  }*/
 }
 
-// Adding a empty Pgroup instance member to constructor function.
+// Adding an empty Pgroup instance member to constructor function.
 // The reason this member never needs to be recreated is the fact that class
 // methods do not operate on own members but instead create new resulting
-// instances which leaves PGroup.empty unchanged.
+// instances which leaves PGroup.empty unchanged in every case.
 PGroup.empty = new PGroup([]);
