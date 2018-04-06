@@ -27,7 +27,6 @@
 */
 
 
-
 // 1. 'car' and 'cat' RegExp
 // --------------------------
 let regExpOne = /ca[rt]/;
