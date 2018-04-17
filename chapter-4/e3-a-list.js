@@ -47,32 +47,29 @@
 */
 
 
-// arrayToList - progressive verison
+// arrayToList - version 1 - progressive verison
 // Array elements are added to the list in the order that they appear in the
 // array, from the 0th element to the .length - 1th element.
 // -------------------------------------------------------------------------
-function arrayToListProg(array) {
-  let list = null;
-  let listElement;
-  if (list == null) {
-    list = {value: array[0], rest: null};
-    listElement = list;
-  }
+function arrayToList_v1(array) {
+  if (array.length == 0) return null;
+  let list = {value: array[0], rest: null};
+  let node = list;
   for (let i = 1; i < array.length; i++) {
-    listElement.rest = {value: array[i], rest: null};
-    listElement = listElement.rest;
+    node.rest = {value: array[i], rest: null};
+    node = node.rest;
   }
   return list;
 }
 
 
-// arrayToList - regressive version
+// arrayToList - version 2 - regressive version
 // Array elements are added to the list in reversed order, that is from the
 // .length - 1th element of the array to the 0th one. However, this does not
 // change the order of list nodes, as the references to the rest node were set
 // to the previously created node, instead of the newly created one.
 // ---------------------------------------------------------------------------
-function arrayToListReg(array) {
+function arrayToList_v2(array) {
   let list = null;
   for (let i = array.length - 1; i >=0 ; i--) {
     list = {value: array[i], rest: list};
