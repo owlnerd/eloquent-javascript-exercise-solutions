@@ -19,7 +19,7 @@
 function byTagName(node, tagName) {
   let elements = [];
   for (let child of Array.from(node.childNodes)) {
-    if (child.nodeName.toLowerCase() == tagName) {
+    if (child.nodeName == tagName.toUpperCase()) {
       elements.push(child);
     }
     elements = elements.concat(byTagName(child, tagName));
